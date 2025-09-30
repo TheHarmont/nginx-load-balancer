@@ -1,0 +1,11 @@
+services:
+ 
+  nginx-load-balancer:
+    image: nginx:1.27.5
+    container_name: nginx-load-balancer
+    restart: always
+    ports:
+     - "8085:8085"
+     volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - /var/logs/nginx:/var/log/nginx
